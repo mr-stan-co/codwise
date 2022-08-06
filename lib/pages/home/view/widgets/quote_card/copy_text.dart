@@ -10,8 +10,8 @@ class CopyText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
-      children: [
-        const Padding(
+      children: const [
+        Padding(
           padding: EdgeInsets.all(8.0),
           child: Icon(
             Icons.copy,
@@ -19,12 +19,9 @@ class CopyText extends StatelessWidget {
             size: 24,
           ),
         ),
-        const SizedBox(
-          width: 8,
-        ),
         Text(
           "Copy text",
-          style: const TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 18),
         ),
       ],
     );

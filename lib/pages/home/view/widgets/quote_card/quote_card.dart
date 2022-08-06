@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/card_constants.dart';
@@ -66,15 +67,31 @@ class QuoteCard extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(CardConstants.cardBorderRadius)),
             boxShadow: _cardShadow(),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: [
-              _siteName(),
-              _quoteText(),
-              _separator(),
-              _quoteAuthor(),
-              _copyText(),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(48.0),
+                    child: SizedBox(
+                      height: 200,
+                      child: SvgPicture.asset('assets/images/quote_icon.svg'),
+                    ),
+                  ),
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _siteName(),
+                  _quoteText(),
+                  _divider(),
+                  _quoteAuthor(),
+                  _copyText(),
+                ],
+              ),
             ],
           ),
         ),
@@ -111,11 +128,14 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
-  Widget _separator() {
+  Widget _divider() {
     return const Opacity(
       opacity: 0.7,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(100, 0, 100, 0),
+        padding: EdgeInsets.symmetric(
+          vertical: 0,
+          horizontal: CardConstants.cardPadding * 3,
+        ),
         child: DashSeparator(),
       ),
     );
