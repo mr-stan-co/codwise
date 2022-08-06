@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/card_constants.dart';
@@ -142,14 +143,21 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _quoteAuthor() {
-    return const Padding(
-      padding: EdgeInsets.all(36.0),
-      child: Text(
-        "Alan Perlis",
-        style: TextStyle(
-          fontSize: 22,
-          fontFamily: AppFonts.poppins,
-          decoration: TextDecoration.underline,
+    const authorName = "Alan Perlis";
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: InkWell(
+        onTap: () => onAuthorNameClicked(authorName),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            authorName,
+            style: TextStyle(
+              fontSize: 22,
+              fontFamily: AppFonts.poppins,
+              decoration: TextDecoration.underline,
+            ),
+          ),
         ),
       ),
     );
@@ -171,5 +179,12 @@ class QuoteCard extends StatelessWidget {
         offset: const Offset(0, 3), // changes position of shadow
       ),
     ];
+  }
+
+  onAuthorNameClicked(String searchQuery) async {
+    final Uri url = Uri.parse('https://www.google.com/search?q=$searchQuery');
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
   }
 }
