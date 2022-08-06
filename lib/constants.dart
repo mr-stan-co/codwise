@@ -8,3 +8,8 @@ class AppColors {
   static const Color textGray = Color(0xffA4A4A4);
 
 }
+
+class AppFonts {
+  static const String playfairDisplay = "PlayfairDisplay";
+  static const String poppins = "Poppins";
+}

@@ -44,3 +44,4 @@ flutter:
         - asset: assets/fonts/PlayfairDisplay-Regular.otf
         - asset: assets/fonts/PlayfairDisplay-Bold.otf
         - asset: assets/fonts/PlayfairDisplay-Italic.otf
+        - asset: assets/fonts/Poppins-Regular.otf

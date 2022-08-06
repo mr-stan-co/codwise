@@ -120,7 +120,7 @@ class QuoteCard extends StatelessWidget {
         "There are two ways to write error-free programmes; only the third works.",
         style: TextStyle(
           fontSize: 48,
-          fontFamily: "PlayfairDisplay",
+          fontFamily: AppFonts.playfairDisplay,
           fontWeight: FontWeight.w600,
         ),
         textAlign: TextAlign.center,
@@ -143,10 +143,14 @@ class QuoteCard extends StatelessWidget {
 
   Widget _quoteAuthor() {
     return const Padding(
-      padding: EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(36.0),
       child: Text(
         "Alan Perlis",
-        style: TextStyle(fontSize: 22),
+        style: TextStyle(
+          fontSize: 22,
+          fontFamily: AppFonts.poppins,
+          decoration: TextDecoration.underline,
+        ),
       ),
     );
   }
