@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wise_dev/pages/home/home_page.dart';
+import 'package:wise_dev/pages/home/view/home_page.dart';
 
 class AppRoute {
   static const home = '/';

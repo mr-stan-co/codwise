@@ -1,7 +1,10 @@
 import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
+import 'package:wise_dev/constants.dart';
+import 'package:wise_dev/pages/home/view/widgets/home_app_bar.dart';
+import 'package:wise_dev/pages/home/view/widgets/today_date.dart';
+import 'package:wise_dev/pages/home/view/widgets/quote_card/quote_card.dart';
 import 'package:wise_dev/pages/home/viewmodel/home_cubit.dart';
 import 'package:wise_dev/pages/home/viewmodel/home_state.dart';
 
@@ -11,9 +14,7 @@ class HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Adwisely"),
-      ),
+      appBar:const HomeAppBar(),
       body: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return state.when(
@@ -35,29 +36,25 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _dataView(QuoteEntity quite) {
-    final date = DateFormat.yMMMMEEEEd().add_Hm().format(DateTime.now());
     return Container(
       alignment: Alignment.center,
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              AppColors.homeBackgroundTop,
+              AppColors.homeBackgroundBottom,
+            ],
+          )
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            date,
-            style: TextStyle(fontSize: 24),
-          ),
-          Padding(
-            padding: EdgeInsets.all(32.0),
-            child: Text(
-              quite.quote,
-              style: TextStyle(fontSize: 42),
-            ),
-          ),
-          Text(
-            quite.author,
-            style: TextStyle(fontSize: 24),
-          ),
+        children: const [
+          TodayDate(),
+          QuoteCard(),
         ],
       ),
     );
