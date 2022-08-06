@@ -87,17 +87,25 @@ class QuoteCard extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
       child: Text(
         "Adwisely",
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(
+          color: AppColors.textGray,
+          fontSize: 20,
+          fontFamily: "PlayfairDisplay",
+        ),
       ),
     );
   }
 
   Widget _quoteText() {
     return const Padding(
-      padding: EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(48.0),
       child: Text(
         "There are two ways to write error-free programmes; only the third works.",
-        style: TextStyle(fontSize: 48),
+        style: TextStyle(
+          fontSize: 48,
+          fontFamily: "PlayfairDisplay",
+          fontWeight: FontWeight.w600,
+        ),
         textAlign: TextAlign.center,
       ),
     );

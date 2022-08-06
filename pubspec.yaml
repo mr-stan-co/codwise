@@ -34,3 +34,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Regular.otf
+        - asset: assets/fonts/PlayfairDisplay-Bold.otf
+        - asset: assets/fonts/PlayfairDisplay-Italic.otf
