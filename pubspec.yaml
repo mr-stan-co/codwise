@@ -17,6 +17,8 @@ dependencies:
   freezed_annotation: ^2.0.3
   firebase_core: ^1.10.6
   intl: ^0.17.0
+  flutter_svg: ^1.1.3
+  url_launcher: ^6.1.5
 
   repository:
     path: packages/repository
@@ -30,8 +32,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.1.11
   freezed: ^2.0.3+1
-  flutter_svg: ^1.1.3
-  url_launcher: ^6.1.5
 
 flutter:
   uses-material-design: true

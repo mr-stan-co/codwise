@@ -53,6 +53,8 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _mainCard() {
+    const quoteText = "There are two ways to write error-free programmes; only the third works.";
+    const authorName = "Alan Perlis";
     return Align(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -87,10 +89,10 @@ class QuoteCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _siteName(),
-                  _quoteText(),
+                  _quoteText(quoteText),
                   _divider(),
-                  _quoteAuthor(),
-                  _copyText(),
+                  _quoteAuthor(authorName),
+                  _copyText(quoteText),
                 ],
               ),
             ],
@@ -114,12 +116,12 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
-  Widget _quoteText() {
-    return const Padding(
-      padding: EdgeInsets.all(48.0),
+  Widget _quoteText(String quoteText) {
+    return Padding(
+      padding: const EdgeInsets.all(48.0),
       child: Text(
-        "There are two ways to write error-free programmes; only the third works.",
-        style: TextStyle(
+        quoteText,
+        style: const TextStyle(
           fontSize: 48,
           fontFamily: AppFonts.playfairDisplay,
           fontWeight: FontWeight.w600,
@@ -142,17 +144,16 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
-  Widget _quoteAuthor() {
-    const authorName = "Alan Perlis";
+  Widget _quoteAuthor(String authorName) {
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.fromLTRB(CardConstants.cardPadding, 24, CardConstants.cardPadding, 0,),
       child: InkWell(
         onTap: () => onAuthorNameClicked(authorName),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             authorName,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 22,
               fontFamily: AppFonts.poppins,
               decoration: TextDecoration.underline,
@@ -163,11 +164,8 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
-  Widget _copyText() {
-    return const Padding(
-      padding: EdgeInsets.all(16.0),
-      child: CopyText(),
-    );
+  Widget _copyText(String quoteText) {
+    return CopyText(quoteText: quoteText);
   }
 
   List<BoxShadow> _cardShadow() {
