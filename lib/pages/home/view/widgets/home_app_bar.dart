@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:wise_dev/constants.dart';
+import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
     return Container(
       height: preferredSize.height,
       decoration: _appBarDecoration(),
@@ -20,11 +23,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   _logo(),
-                  _divider(),
-                  _slogan(),
+                  _divider(visible: !isSmallScreen),
+                  _slogan(visible: !isSmallScreen),
                 ],
               ),
-              _about(),
+              _about(context),
             ]),
       ),
     );
@@ -45,35 +48,41 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Widget _divider() {
-    return const SizedBox(
-      width: 2,
-      height: 24,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: AppColors.appBarDividerGray,
+  Widget _divider({required bool visible}) {
+    return Visibility(
+      visible: visible,
+      child: const SizedBox(
+        width: 2,
+        height: 24,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: AppColors.appBarDividerGray,
+          ),
         ),
       ),
     );
   }
 
-  Widget _slogan() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
-      child: Text(
-        AppStrings.appSlogan,
-        style: TextStyle(
-          color: AppColors.textGray,
-          fontSize: 16,
-          fontFamily: AppFonts.poppins,
+  Widget _slogan({required bool visible}) {
+    return Visibility(
+      visible: visible,
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+        child: Text(
+          AppStrings.appSlogan,
+          style: TextStyle(
+            color: AppColors.textGray,
+            fontSize: 16,
+            fontFamily: AppFonts.poppins,
+          ),
         ),
       ),
     );
   }
 
-  Widget _about() {
+  Widget _about(BuildContext context) {
     return InkWell(
-      onTap: () => _onAboutClicked(),
+      onTap: () => _onAboutClicked(context),
       child: const Padding(
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
         child: Text(
@@ -88,8 +97,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  _onAboutClicked() {
-    // TODO navigate to about page
+  _onAboutClicked(BuildContext context) {
+    RegisteredRoutes.about.navigate(context);
   }
 
   Decoration _appBarDecoration() {
