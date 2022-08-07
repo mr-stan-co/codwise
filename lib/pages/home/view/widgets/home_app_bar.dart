@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wise_dev/constants.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({Key? key}) : super(key: key);
@@ -11,8 +12,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: const [
-          Text("Adwisely"),
-          Text("Your daily dose of insight & inspiration"),
+          Text(AppStrings.appName),
+          Text(AppStrings.appSlogan),
         ],
       ),
     );

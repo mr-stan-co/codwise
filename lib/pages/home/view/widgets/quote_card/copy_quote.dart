@@ -3,15 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_text_toast.dart';
 
-class CopyText extends StatefulWidget {
-  const CopyText({Key? key, required this.quoteText}) : super(key: key);
+class CopyQuote extends StatefulWidget {
+  const CopyQuote({
+    Key? key,
+    required this.quoteText,
+  }) : super(key: key);
   final String quoteText;
 
   @override
-  State<CopyText> createState() => _CopyTextState();
+  State<CopyQuote> createState() => _CopyQuoteState();
 }
 
-class _CopyTextState extends State<CopyText> {
+class _CopyQuoteState extends State<CopyQuote> {
   var showToast = false;
 
   @override
@@ -25,10 +28,10 @@ class _CopyTextState extends State<CopyText> {
             maintainSize: true,
             maintainAnimation: true,
             maintainState: true,
-            child: CopyTextToast(),
+            child: const CopyTextToast(),
           ),
           InkWell(
-            onTap: () => onCopyTextClicked(widget.quoteText),
+            onTap: () => onCopyQuoteClicked(widget.quoteText),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -42,7 +45,7 @@ class _CopyTextState extends State<CopyText> {
                   ),
                 ),
                 Text(
-                  "Copy text",
+                  "Copy quote",
                   style: TextStyle(fontSize: 18),
                 ),
               ],
@@ -53,12 +56,12 @@ class _CopyTextState extends State<CopyText> {
     );
   }
 
-  onCopyTextClicked(String quoteText) async {
+  onCopyQuoteClicked(String quoteText) async {
     Clipboard.setData(ClipboardData(text: quoteText));
     setState(() {
       showToast = true;
       Future.delayed(
-        Duration(seconds: 1),
+        const Duration(seconds: 1),
         () {
           setState(() {
             showToast = false;

@@ -14,3 +14,8 @@ class AppFonts {
   static const String playfairDisplay = "PlayfairDisplay";
   static const String poppins = "Poppins";
 }
+
+class AppStrings {
+  static const String appName = "Adwisely";
+  static const String appSlogan = "Your daily dose of insight & inspiration";
+}

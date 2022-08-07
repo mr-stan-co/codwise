@@ -1,14 +1,20 @@
+import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/card_constants.dart';
-import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_text.dart';
+import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_quote.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/dashed_separator.dart';
 
 class QuoteCard extends StatelessWidget {
-  const QuoteCard({Key? key}) : super(key: key);
+  const QuoteCard({
+    Key? key,
+    required this.quoteEntity,
+  }) : super(key: key);
+
+  final QuoteEntity quoteEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +59,6 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _mainCard() {
-    const quoteText = "There are two ways to write error-free programmes; only the third works.";
-    const authorName = "Alan Perlis";
     return Align(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -89,10 +93,10 @@ class QuoteCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _siteName(),
-                  _quoteText(quoteText),
+                  _quoteText(quoteEntity.quote),
                   _divider(),
-                  _quoteAuthor(authorName),
-                  _copyText(quoteText),
+                  _quoteAuthor(quoteEntity.author),
+                  _copyText(quoteEntity.quote),
                 ],
               ),
             ],
@@ -106,11 +110,11 @@ class QuoteCard extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
       child: Text(
-        "Adwisely",
+        AppStrings.appName,
         style: TextStyle(
           color: AppColors.textGray,
           fontSize: 20,
-          fontFamily: "PlayfairDisplay",
+          fontFamily: AppFonts.playfairDisplay,
         ),
       ),
     );
@@ -146,7 +150,12 @@ class QuoteCard extends StatelessWidget {
 
   Widget _quoteAuthor(String authorName) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(CardConstants.cardPadding, 24, CardConstants.cardPadding, 0,),
+      padding: const EdgeInsets.fromLTRB(
+        CardConstants.cardPadding,
+        24,
+        CardConstants.cardPadding,
+        0,
+      ),
       child: InkWell(
         onTap: () => onAuthorNameClicked(authorName),
         child: Padding(
@@ -165,7 +174,7 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _copyText(String quoteText) {
-    return CopyText(quoteText: quoteText);
+    return CopyQuote(quoteText: quoteText);
   }
 
   List<BoxShadow> _cardShadow() {
@@ -181,8 +190,10 @@ class QuoteCard extends StatelessWidget {
 
   onAuthorNameClicked(String searchQuery) async {
     final Uri url = Uri.parse('https://www.google.com/search?q=$searchQuery');
-    if (!await launchUrl(url)) {
-      throw 'Could not launch $url';
+    try {
+      await launchUrl(url);
+    } catch (_) {
+      // TODO track issue in firebase
     }
   }
 }

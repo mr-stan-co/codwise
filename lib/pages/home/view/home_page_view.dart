@@ -52,9 +52,9 @@ class HomePageView extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          TodayDate(),
-          QuoteCard(),
+        children: [
+          const TodayDate(),
+          QuoteCard(quoteEntity: quite),
         ],
       ),
     );
