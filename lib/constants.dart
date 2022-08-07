@@ -7,6 +7,7 @@ class AppColors {
   static const Color homeBackgroundTop = Color(0xffedefff);
   static const Color homeBackgroundBottom = Color(0xffF2EBFF);
   static const Color textGray = Color(0xffA4A4A4);
+  static const Color appBarDividerGray = Color(0xffD8D8D8);
 
 }
 
