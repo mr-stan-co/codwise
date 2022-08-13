@@ -7,7 +7,7 @@ import 'package:wise_dev/pages/about/view/widgets/about_step_view.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_cubit.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_state.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
-import 'package:wise_dev/pages/home/view/widgets/home_app_bar.dart';
+import 'package:wise_dev/pages/main_app_bar.dart';
 
 class AboutPageView extends StatelessWidget {
   const AboutPageView({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class AboutPageView extends StatelessWidget {
     return BlocBuilder<AboutCubit, AboutState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: const HomeAppBar(),
+          appBar: const MainAppBar(),
           backgroundColor: AppColors.aboutBackground,
           body: SingleChildScrollView(
             child: Column(

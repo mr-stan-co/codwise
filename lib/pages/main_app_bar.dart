@@ -3,8 +3,8 @@ import 'package:wise_dev/app/router.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
-class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({Key? key}) : super(key: key);
+class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MainAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
