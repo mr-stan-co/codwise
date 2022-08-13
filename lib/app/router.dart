@@ -30,6 +30,7 @@ class RegisteredRoutes {
 
 GoRouter createGoRouter() {
   return GoRouter(
+    urlPathStrategy: UrlPathStrategy.path,
     routes: [
       RegisteredRoutes.home,
       RegisteredRoutes.about,
