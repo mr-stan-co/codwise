@@ -23,7 +23,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  _logo(),
+                  _logo(context),
                   _divider(visible: !isSmallScreen),
                   _slogan(visible: !isSmallScreen),
                 ],
@@ -34,16 +34,19 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Widget _logo() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
-      child: Text(
-        AppStrings.appName,
-        style: TextStyle(
-          color: AppColors.black,
-          fontSize: 20,
-          fontFamily: AppFonts.playfairDisplay,
-          fontWeight: FontWeight.bold,
+  Widget _logo(BuildContext context) {
+    return InkWell(
+      onTap: () => _onHomeClicked(context),
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+        child: Text(
+          AppStrings.appName,
+          style: TextStyle(
+            color: AppColors.black,
+            fontSize: 20,
+            fontFamily: AppFonts.playfairDisplay,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
@@ -96,6 +99,10 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
+  }
+
+  _onHomeClicked(BuildContext context) {
+    RegisteredRoutes.home.navigate(context);
   }
 
   _onAboutClicked(BuildContext context) {
