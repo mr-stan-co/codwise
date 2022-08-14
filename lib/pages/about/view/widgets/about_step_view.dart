@@ -27,10 +27,11 @@ class AboutStepView extends StatelessWidget {
               child: Text(
                 step.title,
                 style: TextStyle(
-                    color: step.titleTextColor,
-                    fontSize: 36,
-                    fontFamily: AppFonts.poppins,
-                    fontWeight: FontWeight.w600),
+                  color: step.titleTextColor,
+                  fontSize: 36,
+                  fontFamily: AppFonts.poppins,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             Text(

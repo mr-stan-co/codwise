@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/about/view/widgets/about_main_title.dart';
-import 'package:wise_dev/pages/about/view/widgets/about_step_view.dart';
+import 'package:wise_dev/pages/about/view/widgets/about_steps.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_cubit.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_state.dart';
-import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
 import 'package:wise_dev/pages/main_app_bar.dart';
 
 class AboutPageView extends StatelessWidget {
@@ -24,7 +23,7 @@ class AboutPageView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _aboutHeader(state),
-                _aboutFeatures(),
+                const AboutSteps(),
               ],
             ),
           ),
@@ -129,33 +128,6 @@ class AboutPageView extends StatelessWidget {
               )
             ],
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _aboutFeatures() {
-    return Padding(
-      padding: const EdgeInsets.all(54.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Spacer(),
-          Expanded(
-            flex: 5,
-            child: AboutStepView(step: AboutStep.first),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 5,
-            child: AboutStepView(step: AboutStep.second),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 5,
-            child: AboutStepView(step: AboutStep.third),
-          ),
-          Spacer(),
         ],
       ),
     );
