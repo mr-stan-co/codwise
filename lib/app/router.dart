@@ -37,7 +37,10 @@ GoRouter createGoRouter() {
     ]
         .map((route) => GoRoute(
               path: route.path,
-              builder: (BuildContext context, GoRouterState state) => route.buildPage(),
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                child: route.buildPage(),
+              ),
             ))
         .toList(),
   );
