@@ -2,11 +2,11 @@ import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/main_app_bar.dart';
-import 'package:wise_dev/pages/home/view/widgets/today_date.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/quote_card.dart';
+import 'package:wise_dev/pages/home/view/widgets/today_date.dart';
 import 'package:wise_dev/pages/home/viewmodel/home_cubit.dart';
 import 'package:wise_dev/pages/home/viewmodel/home_state.dart';
+import 'package:wise_dev/pages/main_app_bar.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({Key? key}) : super(key: key);
@@ -28,11 +28,17 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _loadingView() {
-    return const CircularProgressIndicator();
+    return Container(
+      alignment: Alignment.center,
+      child: const CircularProgressIndicator(),
+    );
   }
 
   Widget _errorView() {
-    return const Text("Error happened");
+    return Container(
+      alignment: Alignment.center,
+      child: const Text("Oops.. Something went wrong"),
+    );
   }
 
   Widget _dataView(QuoteEntity quite) {
