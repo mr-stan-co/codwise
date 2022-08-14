@@ -43,9 +43,9 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           AppStrings.appName,
           style: TextStyle(
             color: AppColors.black,
-            fontSize: 20,
+            fontSize: 24,
             fontFamily: AppFonts.playfairDisplay,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
@@ -71,7 +71,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Visibility(
       visible: visible,
       child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+        padding: EdgeInsets.fromLTRB(16, 8, 16, 4),
         child: Text(
           AppStrings.appSlogan,
           style: TextStyle(
@@ -92,7 +92,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Text(
           "About",
           style: TextStyle(
-            color: AppColors.black,
+            color: AppColors.accentColor,
             fontSize: 18,
             fontFamily: AppFonts.poppins,
           ),
