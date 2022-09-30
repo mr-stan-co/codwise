@@ -4,7 +4,8 @@ import 'package:entity/entity.dart';
 class QuoteField {
   static const quote = 'quote';
   static const author = 'author';
-  static const dayOfYear = 'day_of_year';
+  static const weekOfYear = 'week_of_year';
+  static const dayOfWeek = 'day_of_week';
 }
 
 class QuoteMapper {
@@ -17,7 +18,8 @@ class QuoteMapper {
       id: quoteSnapshot.id,
       quote: quoteSnapshot.get(QuoteField.quote),
       author: quoteSnapshot.get(QuoteField.author),
-      dayOfYear: quoteSnapshot.get(QuoteField.dayOfYear),
+      weekOfYear: quoteSnapshot.get(QuoteField.weekOfYear),
+      dayOfWeek: quoteSnapshot.get(QuoteField.dayOfWeek),
     );
   }
 }
