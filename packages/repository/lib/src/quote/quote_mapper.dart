@@ -1,12 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:entity/entity.dart';
-
-class QuoteField {
-  static const quote = 'quote';
-  static const author = 'author';
-  static const weekOfYear = 'week_of_year';
-  static const dayOfWeek = 'day_of_week';
-}
+import 'package:repository/src/quote/quote_fields.dart';
 
 class QuoteMapper {
   const QuoteMapper();

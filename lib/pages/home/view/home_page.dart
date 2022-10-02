@@ -10,7 +10,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-      create: (context) => QuoteRepository(quoteMapper: const QuoteMapper()),
+      create: (context) => QuoteRepository(
+        firebaseDataSource: FirebaseDataSource(
+          quoteMapper: const QuoteMapper(),
+        ),
+      ),
       child: BlocProvider(
         create: (context) => HomeCubit(
           quoteRepository: context.read<QuoteRepository>(),
