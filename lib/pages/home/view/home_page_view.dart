@@ -41,7 +41,7 @@ class HomePageView extends StatelessWidget {
     );
   }
 
-  Widget _dataView(QuoteEntity quite) {
+  Widget _dataView(QuoteEntity quote) {
     return Container(
       alignment: Alignment.center,
       decoration: const BoxDecoration(
@@ -60,7 +60,7 @@ class HomePageView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const TodayDate(),
-          QuoteCard(quoteEntity: quite),
+          QuoteCard(quoteEntity: quote),
         ],
       ),
     );

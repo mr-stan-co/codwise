@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) => QuoteRepository(
-        firebaseDataSource: FirebaseDataSource(
+        csvDataSource: CsvDataSource(
           quoteMapper: const QuoteMapper(),
         ),
       ),

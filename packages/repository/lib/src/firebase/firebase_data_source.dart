@@ -14,7 +14,7 @@ class FirebaseDataSource {
   final _quotesCollection = FirebaseFirestore.instance.collection(FirebasePath.quotes);
   final QuoteMapper _quoteMapper;
 
-  Future<QuoteEntity> getQuoteByDay({
+  Future<WeekdayQuoteEntity> getQuoteByDay({
     required int weekOfYear,
     required int dayOfWeek,
   }) async {
@@ -30,13 +30,13 @@ class FirebaseDataSource {
     }
   }
 
-  Future<QuoteEntity> _getQuoteOfTheDay(QuerySnapshot snapshot) {
+  Future<WeekdayQuoteEntity> _getQuoteOfTheDay(QuerySnapshot snapshot) {
     final quoteOfTheDaySnapshot = snapshot.docs.first;
     final quoteOfTheDay = _quoteMapper.toEntity(quoteSnapshot: quoteOfTheDaySnapshot);
     return Future.value(quoteOfTheDay);
   }
 
-  Future<QuoteEntity> _getRandomQuote(QuerySnapshot snapshot) {
+  Future<WeekdayQuoteEntity> _getRandomQuote(QuerySnapshot snapshot) {
     if (snapshot.docs.isNotEmpty) {
       final randomIndex = Random().nextInt(snapshot.size);
       final randomQuoteSnapshot = snapshot.docs.elementAt(randomIndex);

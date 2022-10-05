@@ -1,22 +1,31 @@
 import 'package:entity/entity.dart';
 import 'package:intl/intl.dart';
-import 'package:repository/src/firebase/firebase_data_source.dart';
+import 'package:repository/src/csv_table/csv_data_source.dart';
 
 class QuoteRepository {
   QuoteRepository({
-    required FirebaseDataSource firebaseDataSource,
-  }) : _firebaseDataSource = firebaseDataSource;
+    required CsvDataSource csvDataSource,
+  }) : _csvDataSource = csvDataSource;
 
-  final FirebaseDataSource _firebaseDataSource;
+  final CsvDataSource _csvDataSource;
   final _today = DateTime.now();
 
   Future<QuoteEntity> getQuoteOfTheDay() async {
-    final weekOfYear = _getWeekOfYear();
     final dayOfWeek = _getDayOfWeek();
-    return _firebaseDataSource.getQuoteByDay(
-      weekOfYear: weekOfYear,
-      dayOfWeek: dayOfWeek,
-    );
+    switch (dayOfWeek) {
+      case 6:
+        return Future.value(_getSaturdayQuote());
+      case 7:
+        return Future.value(_getSundayQuote());
+      default:
+        {
+          final weekOfYear = _getWeekOfYear();
+          return _csvDataSource.getQuoteOfTheDay(
+            weekOfYear: weekOfYear,
+            dayOfWeek: dayOfWeek,
+          );
+        }
+    }
   }
 
   int _getWeekOfYear() {
@@ -26,5 +35,17 @@ class QuoteRepository {
     return weekOfYear;
   }
 
-  int _getDayOfWeek() => _today.weekday;
+  _getDayOfWeek() => _today.weekday;
+
+  WeekendQuoteEntity _getSaturdayQuote() {
+    return WeekendQuoteEntity(
+      quote: "It is Saturday",
+    );
+  }
+
+  WeekendQuoteEntity _getSundayQuote() {
+    return WeekendQuoteEntity(
+      quote: "It is Sunday",
+    );
+  }
 }

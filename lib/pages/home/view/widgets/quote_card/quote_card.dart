@@ -59,6 +59,7 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _mainCard() {
+    final isWeekdayQuote = quoteEntity is WeekdayQuoteEntity;
     return Align(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -88,22 +89,38 @@ class QuoteCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _siteName(),
-                  _quoteText(quoteEntity.quote),
-                  _divider(),
-                  _quoteAuthor(quoteEntity.author),
-                  _copyText(quoteEntity.quote),
-                ],
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: isWeekdayQuote
+                      ? _weekdayCard(quoteEntity as WeekdayQuoteEntity)
+                      : _weekendCard(quoteEntity as WeekendQuoteEntity),
+                ),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  List<Widget> _weekdayCard(WeekdayQuoteEntity quoteEntity) {
+    return [
+      _siteName(),
+      _quoteText(quoteEntity.quote),
+      _divider(),
+      _quoteAuthor(quoteEntity.author),
+      _copyText(quoteEntity.quote),
+    ];
+  }
+
+  List<Widget> _weekendCard(WeekendQuoteEntity quoteEntity) {
+    return [
+      _siteName(),
+      _quoteText(quoteEntity.quote),
+    ];
   }
 
   Widget _siteName() {
