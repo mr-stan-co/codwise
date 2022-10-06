@@ -59,7 +59,6 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _mainCard() {
-    final isWeekdayQuote = quoteEntity is WeekdayQuoteEntity;
     return Align(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -94,9 +93,7 @@ class QuoteCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: isWeekdayQuote
-                      ? _weekdayCard(quoteEntity as WeekdayQuoteEntity)
-                      : _weekendCard(quoteEntity as WeekendQuoteEntity),
+                  children: _constructQuoteCard(quoteEntity),
                 ),
               ),
             ],
@@ -104,6 +101,18 @@ class QuoteCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<Widget> _constructQuoteCard(QuoteEntity quoteEntity) {
+    if (quoteEntity.quote.isNotEmpty) {
+      if (quoteEntity is WeekdayQuoteEntity) {
+        return _weekdayCard(quoteEntity);
+      }
+      if (quoteEntity is WeekendQuoteEntity) {
+        return _weekendCard(quoteEntity);
+      }
+    }
+    return _emptyQuoteCard();
   }
 
   List<Widget> _weekdayCard(WeekdayQuoteEntity quoteEntity) {
@@ -120,6 +129,15 @@ class QuoteCard extends StatelessWidget {
     return [
       _siteName(),
       _quoteText(quoteEntity.quote),
+      const SizedBox(height: 48)
+    ];
+  }
+
+  List<Widget> _emptyQuoteCard() {
+    return [
+      _siteName(),
+      _quoteText("Wisdom not found :( \n We'll try to find some wisdom for you tomorrow."),
+      const SizedBox(height: 48)
     ];
   }
 

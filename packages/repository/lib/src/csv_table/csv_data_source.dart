@@ -30,11 +30,9 @@ class CsvDataSource {
         final quoteOfTheDay = quoteEntities.firstWhere(
                 (quote) => quote.weekOfYear == weekOfYear && quote.dayOfWeek == dayOfWeek,
             orElse: () => _getRandomQuote(quoteEntities));
-        print("quoteOfTheDay: ${quoteOfTheDay}");
         return Future.value(quoteOfTheDay);
       }
     } catch (_) {
-      print("catch: $_");
       return Future.error("No quote for today :(");
     }
   }
