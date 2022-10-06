@@ -49,17 +49,22 @@ class AboutStepView extends StatelessWidget {
   }
 
   Widget _stepIcon() {
-    return Container(
-      decoration: BoxDecoration(
-        color: step.bgAccentColor,
-        shape: BoxShape.circle,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
+    return SizedBox(
+      height: 124,
+      width: 124,
+      child: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: step.bgAccentColor,
+          shape: BoxShape.circle,
+        ),
         child: Text(
-          step.emoji,
-          style: const TextStyle(
+          "${step.index + 1}",
+          style: TextStyle(
+            color: step.titleTextColor,
             fontSize: 48,
+            fontFamily: AppFonts.poppins,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
