@@ -11,5 +11,5 @@ class AboutState {
       "\n"
       "\n"
       "${AppStrings.appName} can help you make your stand-up calls and "
-      "team meetings more fun and useful with the daily dose of tech quotes.";
+      "team meetings more fun and useful with the daily dose of tech quotes and wisdom.";
 }

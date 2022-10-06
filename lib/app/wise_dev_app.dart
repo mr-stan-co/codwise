@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wise_dev/app/router.dart';
+import 'package:wise_dev/constants.dart';
 
 class WiseDevApp extends StatelessWidget {
   WiseDevApp({Key? key}) : super(key: key);
@@ -10,8 +11,8 @@ class WiseDevApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: ThemeData(fontFamily: 'Poppins'),
-      title: 'Wise Dev',
+      theme: ThemeData(fontFamily: AppFonts.poppins),
+      title: AppStrings.appName,
       routeInformationProvider: _router.routeInformationProvider,
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,

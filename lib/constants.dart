@@ -29,6 +29,6 @@ class AppFonts {
 }
 
 class AppStrings {
-  static const String appName = "Adwisely";
-  static const String appSlogan = "Your daily dose of insight & inspiration";
+  static const String appName = "Codwise";
+  static const String appSlogan = "Your daily dose of wisdom & inspiration";
 }
