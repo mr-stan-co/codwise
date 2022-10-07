@@ -11,7 +11,7 @@ class CsvDataSource {
   }) : _quoteMapper = quoteMapper;
 
   QuoteMapper _quoteMapper;
-  String _quotesCsvFilePath = "quotes/quotes_data_base.csv";
+  String _quotesCsvFilePath = "assets/quotes/quotes_data_base.txt";
   CsvToListConverter _quotesConverter = const CsvToListConverter(fieldDelimiter: ";");
 
   Future<WeekdayQuoteEntity> getQuoteOfTheDay({
