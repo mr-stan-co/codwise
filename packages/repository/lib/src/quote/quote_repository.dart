@@ -39,13 +39,13 @@ class QuoteRepository {
 
   WeekendQuoteEntity _getSaturdayQuote() {
     return WeekendQuoteEntity(
-      quote: "It is Saturday",
+      quote: "It's Saturday. Time to take some rest! \n We'll prepare something really great for you on Monday.",
     );
   }
 
   WeekendQuoteEntity _getSundayQuote() {
     return WeekendQuoteEntity(
-      quote: "It is Sunday",
+      quote: "It's Sunday. The weekend is almost gone. \n See you here tomorrow, we've already prepared some great quote for you.",
     );
   }
 }
