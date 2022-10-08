@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:wise_dev/constants.dart';
+import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
 class TodayDate extends StatelessWidget {
   const TodayDate({Key? key}) : super(key: key);
@@ -8,6 +9,10 @@ class TodayDate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final date = DateFormat.yMMMMEEEEd().format(DateTime.now());
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    final double dateTextSize = isSmallScreen ? 16 : 20;
+    final double dateIconSize = isSmallScreen ? 20 : 24;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
@@ -17,12 +22,12 @@ class TodayDate extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Icon(
               Icons.calendar_today,
               color: AppColors.accentColor,
-              size: 24,
+              size: dateIconSize,
             ),
           ),
         ),
@@ -31,7 +36,7 @@ class TodayDate extends StatelessWidget {
         ),
         Text(
           date,
-          style: const TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: dateTextSize),
         ),
       ],
     );

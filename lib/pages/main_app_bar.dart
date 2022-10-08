@@ -10,11 +10,12 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final isSmallScreen =
         ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    final double horizontalPadding = isSmallScreen ? 16 : 160;
     return Container(
       height: preferredSize.height,
       decoration: _appBarDecoration(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 160),
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: horizontalPadding),
         child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

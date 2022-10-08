@@ -7,6 +7,7 @@ import 'package:wise_dev/pages/home/view/widgets/quote_card/background_card_attr
 import 'package:wise_dev/pages/home/view/widgets/quote_card/card_constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_quote.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/dashed_separator.dart';
+import 'package:wise_dev/pages/home/view/widgets/quote_card/quote_text.dart';
 
 class QuoteCard extends StatelessWidget {
   const QuoteCard({
@@ -118,7 +119,7 @@ class QuoteCard extends StatelessWidget {
   List<Widget> _weekdayCard(WeekdayQuoteEntity quoteEntity) {
     return [
       _siteName(),
-      _quoteText(quoteEntity.quote),
+      QuoteText(quoteText: quoteEntity.quote),
       _divider(),
       _quoteAuthor(quoteEntity.author),
       _copyText(quoteEntity.quote),
@@ -128,7 +129,7 @@ class QuoteCard extends StatelessWidget {
   List<Widget> _weekendCard(WeekendQuoteEntity quoteEntity) {
     return [
       _siteName(),
-      _quoteText(quoteEntity.quote),
+      QuoteText(quoteText: quoteEntity.quote),
       const SizedBox(height: 48)
     ];
   }
@@ -136,7 +137,9 @@ class QuoteCard extends StatelessWidget {
   List<Widget> _emptyQuoteCard() {
     return [
       _siteName(),
-      _quoteText("Wisdom not found :( \n We'll try to find some wisdom for you tomorrow."),
+      const QuoteText(
+        quoteText: "Wisdom not found :( \n We'll try to find some wisdom for you tomorrow.",
+      ),
       const SizedBox(height: 48)
     ];
   }
@@ -151,21 +154,6 @@ class QuoteCard extends StatelessWidget {
           fontSize: 20,
           fontFamily: AppFonts.playfairDisplay,
         ),
-      ),
-    );
-  }
-
-  Widget _quoteText(String quoteText) {
-    return Padding(
-      padding: const EdgeInsets.all(48.0),
-      child: Text(
-        quoteText,
-        style: const TextStyle(
-          fontSize: 48,
-          fontFamily: AppFonts.playfairDisplay,
-          fontWeight: FontWeight.w600,
-        ),
-        textAlign: TextAlign.center,
       ),
     );
   }
