@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
+import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
 class AboutStepView extends StatelessWidget {
   const AboutStepView({
@@ -12,6 +13,10 @@ class AboutStepView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    final double stepTitleSize = isSmallScreen ? 24 : 36;
+    final double stepDescriptionSize = isSmallScreen ? 16 : 24;
     return Container(
       decoration: BoxDecoration(
         color: step.bgColor,
@@ -21,14 +26,14 @@ class AboutStepView extends StatelessWidget {
         padding: const EdgeInsets.all(36.0),
         child: Column(
           children: [
-            _stepIcon(),
+            _stepIcon(isSmallScreen),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
                 step.title,
                 style: TextStyle(
                   color: step.titleTextColor,
-                  fontSize: 36,
+                  fontSize: stepTitleSize,
                   fontFamily: AppFonts.poppins,
                   fontWeight: FontWeight.w600,
                 ),
@@ -37,8 +42,8 @@ class AboutStepView extends StatelessWidget {
             Text(
               step.description,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 24,
+              style: TextStyle(
+                fontSize: stepDescriptionSize,
                 fontFamily: AppFonts.poppins,
               ),
             ),
@@ -48,10 +53,12 @@ class AboutStepView extends StatelessWidget {
     );
   }
 
-  Widget _stepIcon() {
+  Widget _stepIcon(bool isSmallScreen) {
+    final double iconSize = isSmallScreen ? 64 : 124;
+    final double fontSize = isSmallScreen ? 32 : 48;
     return SizedBox(
-      height: 124,
-      width: 124,
+      height: iconSize,
+      width: iconSize,
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -62,7 +69,7 @@ class AboutStepView extends StatelessWidget {
           "${step.index + 1}",
           style: TextStyle(
             color: step.titleTextColor,
-            fontSize: 48,
+            fontSize: fontSize,
             fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w600,
           ),

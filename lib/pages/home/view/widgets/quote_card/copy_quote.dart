@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_text_toast.dart';
+import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
 class CopyQuote extends StatefulWidget {
   const CopyQuote({
@@ -19,6 +20,9 @@ class _CopyQuoteState extends State<CopyQuote> {
 
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    final double fontSize = isSmallScreen ? 14 : 18;
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
       child: Column(
@@ -35,8 +39,8 @@ class _CopyQuoteState extends State<CopyQuote> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
-              children: const [
-                Padding(
+              children: [
+                const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.copy,
@@ -46,7 +50,7 @@ class _CopyQuoteState extends State<CopyQuote> {
                 ),
                 Text(
                   "Copy quote",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: fontSize),
                 ),
               ],
             ),

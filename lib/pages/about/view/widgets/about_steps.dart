@@ -3,31 +3,62 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wise_dev/constants.dart';
 import 'package:wise_dev/pages/about/view/widgets/about_step_view.dart';
 import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
+import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
 
 class AboutSteps extends StatelessWidget {
   const AboutSteps({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    return isSmallScreen ? _mobileSteps(isSmallScreen) : _desktopSteps(isSmallScreen);
+  }
+
+  Widget _desktopSteps(bool isSmallScreen) {
     return Column(
       children: [
-        _stepsTitle(),
-        _steps(),
-        _stepsFooter(),
-        const SizedBox(height: 64,),
+        _stepsTitle(isSmallScreen),
+        _stepsDesktop(),
+        _stepsFooter(isSmallScreen),
+        const SizedBox(
+          height: 64,
+        ),
       ],
     );
   }
 
-  Widget _stepsTitle() {
+  Widget _mobileSteps(bool isSmallScreen) {
+    return Column(
+      children: [
+        _stepsTitle(isSmallScreen),
+        const AboutStepView(step: AboutStep.first),
+        const SizedBox(
+          height: 16,
+        ),
+        const AboutStepView(step: AboutStep.second),
+        const SizedBox(
+          height: 16,
+        ),
+        const AboutStepView(step: AboutStep.third),
+        _stepsFooter(isSmallScreen),
+        const SizedBox(
+          height: 64,
+        ),
+      ],
+    );
+  }
+
+  Widget _stepsTitle(bool isSmallScreen) {
+    final double titleFontSize = isSmallScreen ? 20 : 42;
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Text.rich(
         textAlign: TextAlign.center,
         TextSpan(
           text: "Start using ",
-          style: const TextStyle(
-            fontSize: 42,
+          style: TextStyle(
+            fontSize: titleFontSize,
             fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w600,
             color: AppColors.black,
@@ -51,7 +82,7 @@ class AboutSteps extends StatelessWidget {
     );
   }
 
-  Widget _steps() {
+  Widget _stepsDesktop() {
     return Padding(
       padding: const EdgeInsets.all(54.0),
       child: Row(
@@ -78,25 +109,40 @@ class AboutSteps extends StatelessWidget {
     );
   }
 
-  Widget _stepsFooter() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: 36,
-          height: 36,
-          child: SvgPicture.asset('assets/images/repeat.svg'),
-        ),
-        const Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Text(
-            "And repeat. The quote is updated every day!",
-            style: TextStyle(
-              fontSize: 24,
-            ),
-          ),
-        ),
-      ],
+  Widget _stepsFooter(bool isSmallScreen) {
+    final double iconSize = isSmallScreen ? 24 : 36;
+    final double footerFontSize = isSmallScreen ? 16 : 24;
+
+    final footerIcon = Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SizedBox(
+        width: iconSize,
+        height: iconSize,
+        child: SvgPicture.asset('assets/images/repeat.svg'),
+      ),
     );
+    final footerText = Text(
+      "And repeat. The quote is updated every day!",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontSize: footerFontSize,
+      ),
+    );
+    if (isSmallScreen) {
+      return Column(
+        children: [
+          footerIcon,
+          footerText,
+        ],
+      );
+    } else {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          footerIcon,
+          footerText,
+        ],
+      );
+    }
   }
 }
