@@ -1,6 +1,6 @@
 {
-    "name": "wise_dev",
-    "short_name": "wise_dev",
+    "name": "codwise",
+    "short_name": "codwise",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

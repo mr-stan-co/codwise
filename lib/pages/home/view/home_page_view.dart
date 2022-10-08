@@ -1,12 +1,12 @@
 import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/home/view/widgets/quote_card/quote_card.dart';
-import 'package:wise_dev/pages/home/view/widgets/today_date.dart';
-import 'package:wise_dev/pages/home/viewmodel/home_cubit.dart';
-import 'package:wise_dev/pages/home/viewmodel/home_state.dart';
-import 'package:wise_dev/pages/main_app_bar.dart';
+import 'package:codwise/constants.dart';
+import 'package:codwise/pages/home/view/widgets/quote_card/quote_card.dart';
+import 'package:codwise/pages/home/view/widgets/today_date.dart';
+import 'package:codwise/pages/home/viewmodel/home_cubit.dart';
+import 'package:codwise/pages/home/viewmodel/home_state.dart';
+import 'package:codwise/pages/main_app_bar.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({Key? key}) : super(key: key);

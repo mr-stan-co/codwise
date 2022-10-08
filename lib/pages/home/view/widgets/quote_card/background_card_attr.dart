@@ -1,4 +1,4 @@
-import 'package:wise_dev/pages/home/view/widgets/quote_card/card_constants.dart';
+import 'package:codwise/pages/home/view/widgets/quote_card/card_constants.dart';
 
 enum BackgroundCardAttr {
   first(

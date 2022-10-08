@@ -1,4 +1,4 @@
-import 'package:wise_dev/constants.dart';
+import 'package:codwise/constants.dart';
 
 class AboutState {
   const AboutState();

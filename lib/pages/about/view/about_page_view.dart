@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/about/view/widgets/about_main_description.dart';
-import 'package:wise_dev/pages/about/view/widgets/about_main_title.dart';
-import 'package:wise_dev/pages/about/view/widgets/about_steps.dart';
-import 'package:wise_dev/pages/about/viewmodel/about_cubit.dart';
-import 'package:wise_dev/pages/about/viewmodel/about_state.dart';
-import 'package:wise_dev/pages/home/view/widgets/quote_card/dashed_separator.dart';
-import 'package:wise_dev/pages/main_app_bar.dart';
-import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
+import 'package:codwise/constants.dart';
+import 'package:codwise/pages/about/view/widgets/about_main_description.dart';
+import 'package:codwise/pages/about/view/widgets/about_main_title.dart';
+import 'package:codwise/pages/about/view/widgets/about_steps.dart';
+import 'package:codwise/pages/about/viewmodel/about_cubit.dart';
+import 'package:codwise/pages/about/viewmodel/about_state.dart';
+import 'package:codwise/pages/home/view/widgets/quote_card/dashed_separator.dart';
+import 'package:codwise/pages/main_app_bar.dart';
+import 'package:codwise/pages/view_utils/screen_size_util.dart';
 
 class AboutPageView extends StatelessWidget {
   const AboutPageView({Key? key}) : super(key: key);

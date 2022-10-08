@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wise_dev/constants.dart';
+import 'package:codwise/constants.dart';
 
 enum AboutStep {
   first(title: "Keep", description: "Keep it always open in one of your tabs or save in your bookmarks to have an easy everyday access.", bgColor: AppColors.aboutStep1Background, bgAccentColor: AppColors.aboutStep1BackgroundAccent, titleTextColor: AppColors.aboutStep1Text, emoji: "☝"),

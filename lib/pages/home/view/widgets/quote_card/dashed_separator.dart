@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wise_dev/constants.dart';
+import 'package:codwise/constants.dart';
 
 class DashSeparator extends StatelessWidget {
   const DashSeparator({
@@ -19,6 +19,8 @@ class DashSeparator extends StatelessWidget {
         final dashHeight = height;
         final dashCount = (boxWidth / (2 * dashWidth)).floor();
         return Flex(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          direction: Axis.horizontal,
           children: List.generate(dashCount, (_) {
             return SizedBox(
               width: dashWidth,
@@ -28,8 +30,6 @@ class DashSeparator extends StatelessWidget {
               ),
             );
           }),
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          direction: Axis.horizontal,
         );
       },
     );

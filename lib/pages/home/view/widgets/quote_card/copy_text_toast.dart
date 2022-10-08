@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wise_dev/constants.dart';
+import 'package:codwise/constants.dart';
 
 class CopyTextToast extends StatelessWidget {
   const CopyTextToast({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class CopyTextToast extends StatelessWidget {
         borderRadius: BorderRadius.circular(4.0),
         color: AppColors.black,
       ),
-      child: Text(
+      child: const Text(
         "Copied",
         style: TextStyle(
           color: AppColors.white,

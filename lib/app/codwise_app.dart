@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wise_dev/app/router.dart';
-import 'package:wise_dev/constants.dart';
+import 'package:codwise/app/router.dart';
+import 'package:codwise/constants.dart';
 
-class WiseDevApp extends StatelessWidget {
-  WiseDevApp({Key? key}) : super(key: key);
+class CodwiseApp extends StatelessWidget {
+  CodwiseApp({Key? key}) : super(key: key);
 
   final GoRouter _router = createGoRouter();
 

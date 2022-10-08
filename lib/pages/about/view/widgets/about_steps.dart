@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/about/view/widgets/about_step_view.dart';
-import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
-import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
+import 'package:codwise/constants.dart';
+import 'package:codwise/pages/about/view/widgets/about_step_view.dart';
+import 'package:codwise/pages/about/viewmodel/about_step.dart';
+import 'package:codwise/pages/view_utils/screen_size_util.dart';
 
 class AboutSteps extends StatelessWidget {
   const AboutSteps({Key? key}) : super(key: key);

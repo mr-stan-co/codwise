@@ -1,4 +1,4 @@
-# wise_dev
+# codwise
 
 Wise Dev Flutter project.
 

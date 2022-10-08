@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/home/view/widgets/quote_card/copy_text_toast.dart';
-import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
+import 'package:codwise/constants.dart';
+import 'package:codwise/pages/home/view/widgets/quote_card/copy_text_toast.dart';
+import 'package:codwise/pages/view_utils/screen_size_util.dart';
 
 class CopyQuote extends StatefulWidget {
   const CopyQuote({

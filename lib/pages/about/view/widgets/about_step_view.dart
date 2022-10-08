@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wise_dev/constants.dart';
-import 'package:wise_dev/pages/about/viewmodel/about_step.dart';
-import 'package:wise_dev/pages/view_utils/screen_size_util.dart';
+import 'package:codwise/constants.dart';
+import 'package:codwise/pages/about/viewmodel/about_step.dart';
+import 'package:codwise/pages/view_utils/screen_size_util.dart';
 
 class AboutStepView extends StatelessWidget {
   const AboutStepView({
