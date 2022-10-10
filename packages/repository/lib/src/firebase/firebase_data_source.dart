@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:entity/entity.dart';
 import 'package:repository/src/firebase/firebase_constants.dart';
+import 'package:repository/src/quote/quote_data_source.dart';
 import 'package:repository/src/quote/quote_fields.dart';
 import 'package:repository/src/quote/quote_mapper.dart';
 
-class FirebaseDataSource {
+class FirebaseDataSource extends QuoteDataSource {
   FirebaseDataSource({
     required QuoteMapper quoteMapper,
   }) : _quoteMapper = quoteMapper;
@@ -14,6 +15,7 @@ class FirebaseDataSource {
   final _quotesCollection = FirebaseFirestore.instance.collection(FirebasePath.quotes);
   final QuoteMapper _quoteMapper;
 
+  @override
   Future<WeekdayQuoteEntity> getQuoteByDay({
     required int weekOfYear,
     required int dayOfWeek,

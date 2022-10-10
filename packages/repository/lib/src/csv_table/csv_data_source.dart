@@ -4,8 +4,9 @@ import 'package:csv/csv.dart';
 import 'package:entity/entity.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:repository/repository.dart';
+import 'package:repository/src/quote/quote_data_source.dart';
 
-class CsvDataSource {
+class CsvDataSource extends QuoteDataSource {
   CsvDataSource({
     required QuoteMapper quoteMapper,
   }) : _quoteMapper = quoteMapper;
@@ -14,7 +15,8 @@ class CsvDataSource {
   String _quotesCsvFilePath = "assets/quotes/quotes_data_base.txt";
   CsvToListConverter _quotesConverter = const CsvToListConverter(fieldDelimiter: ";");
 
-  Future<WeekdayQuoteEntity> getQuoteOfTheDay({
+  @override
+  Future<WeekdayQuoteEntity> getQuoteByDay({
     required int weekOfYear,
     required int dayOfWeek,
   }) async {

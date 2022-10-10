@@ -1,13 +1,14 @@
 import 'package:entity/entity.dart';
 import 'package:intl/intl.dart';
 import 'package:repository/src/csv_table/csv_data_source.dart';
+import 'package:repository/src/quote/quote_data_source.dart';
 
 class QuoteRepository {
   QuoteRepository({
-    required CsvDataSource csvDataSource,
-  }) : _csvDataSource = csvDataSource;
+    required QuoteDataSource quoteDataSource,
+  }) : _quoteDataSource = quoteDataSource;
 
-  final CsvDataSource _csvDataSource;
+  final QuoteDataSource _quoteDataSource;
   final _today = DateTime.now();
 
   Future<QuoteEntity> getQuoteOfTheDay() async {
@@ -20,7 +21,7 @@ class QuoteRepository {
       default:
         {
           final weekOfYear = _getWeekOfYear();
-          return _csvDataSource.getQuoteOfTheDay(
+          return _quoteDataSource.getQuoteByDay(
             weekOfYear: weekOfYear,
             dayOfWeek: dayOfWeek,
           );
