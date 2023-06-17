@@ -1,13 +1,13 @@
-import 'package:entity/entity.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:codwise/constants.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/card_constants.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/copy_quote.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/dashed_separator.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/quote_text.dart';
+import 'package:entity/entity.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class QuoteCard extends StatelessWidget {
   const QuoteCard({
@@ -105,42 +105,12 @@ class QuoteCard extends StatelessWidget {
   }
 
   List<Widget> _constructQuoteCard(QuoteEntity quoteEntity) {
-    if (quoteEntity.quote.isNotEmpty) {
-      if (quoteEntity is WeekdayQuoteEntity) {
-        return _weekdayCard(quoteEntity);
-      }
-      if (quoteEntity is WeekendQuoteEntity) {
-        return _weekendCard(quoteEntity);
-      }
-    }
-    return _emptyQuoteCard();
-  }
-
-  List<Widget> _weekdayCard(WeekdayQuoteEntity quoteEntity) {
     return [
       _siteName(),
       QuoteText(quoteText: quoteEntity.quote),
       _divider(),
       _quoteAuthor(quoteEntity.author),
       _copyText(quoteEntity.quote),
-    ];
-  }
-
-  List<Widget> _weekendCard(WeekendQuoteEntity quoteEntity) {
-    return [
-      _siteName(),
-      QuoteText(quoteText: quoteEntity.quote),
-      const SizedBox(height: 48)
-    ];
-  }
-
-  List<Widget> _emptyQuoteCard() {
-    return [
-      _siteName(),
-      const QuoteText(
-        quoteText: "Wisdom not found :( \n We'll try to find some wisdom for you tomorrow.",
-      ),
-      const SizedBox(height: 48)
     ];
   }
 
@@ -179,16 +149,19 @@ class QuoteCard extends StatelessWidget {
         CardConstants.cardPadding,
         0,
       ),
-      child: InkWell(
-        onTap: () => onAuthorNameClicked(authorName),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            authorName,
-            style: const TextStyle(
-              fontSize: 22,
-              fontFamily: AppFonts.poppins,
-              decoration: TextDecoration.underline,
+      child: Tooltip(
+        message: 'Tap to google',
+        child: InkWell(
+          onTap: () => onAuthorNameClicked(authorName),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              authorName,
+              style: const TextStyle(
+                fontSize: 22,
+                fontFamily: AppFonts.poppins,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
         ),

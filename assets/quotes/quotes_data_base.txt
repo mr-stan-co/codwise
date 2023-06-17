@@ -1,265 +1,30 @@
-1;1;;
-1;2;;
-1;3;;
-1;4;;
-1;5;;
-2;1;;
-2;2;;
-2;3;;
-2;4;;
-2;5;;
-3;1;;
-3;2;;
-3;3;;
-3;4;;
-3;5;;
-4;1;;
-4;2;;
-4;3;;
-4;4;;
-4;5;;
-5;1;;
-5;2;;
-5;3;;
-5;4;;
-5;5;;
-6;1;;
-6;2;;
-6;3;;
-6;4;;
-6;5;;
-7;1;;
-7;2;;
-7;3;;
-7;4;;
-7;5;;
-8;1;;
-8;2;;
-8;3;;
-8;4;;
-8;5;;
-9;1;;
-9;2;;
-9;3;;
-9;4;;
-9;5;;
-10;1;;
-10;2;;
-10;3;;
-10;4;;
-10;5;;
-11;1;;
-11;2;;
-11;3;;
-11;4;;
-11;5;;
-12;1;;
-12;2;;
-12;3;;
-12;4;;
-12;5;;
-13;1;;
-13;2;;
-13;3;;
-13;4;;
-13;5;;
-14;1;;
-14;2;;
-14;3;;
-14;4;;
-14;5;;
-15;1;;
-15;2;;
-15;3;;
-15;4;;
-15;5;;
-16;1;;
-16;2;;
-16;3;;
-16;4;;
-16;5;;
-17;1;;
-17;2;;
-17;3;;
-17;4;;
-17;5;;
-18;1;;
-18;2;;
-18;3;;
-18;4;;
-18;5;;
-19;1;;
-19;2;;
-19;3;;
-19;4;;
-19;5;;
-20;1;;
-20;2;;
-20;3;;
-20;4;;
-20;5;;
-21;1;;
-21;2;;
-21;3;;
-21;4;;
-21;5;;
-22;1;;
-22;2;;
-22;3;;
-22;4;;
-22;5;;
-23;1;;
-23;2;;
-23;3;;
-23;4;;
-23;5;;
-24;1;;
-24;2;;
-24;3;;
-24;4;;
-24;5;;
-25;1;;
-25;2;;
-25;3;;
-25;4;;
-25;5;;
-26;1;;
-26;2;;
-26;3;;
-26;4;;
-26;5;;
-27;1;;
-27;2;;
-27;3;;
-27;4;;
-27;5;;
-28;1;;
-28;2;;
-28;3;;
-28;4;;
-28;5;;
-29;1;;
-29;2;;
-29;3;;
-29;4;;
-29;5;;
-30;1;;
-30;2;;
-30;3;;
-30;4;;
-30;5;;
-31;1;;
-31;2;;
-31;3;;
-31;4;;
-31;5;;
-32;1;;
-32;2;;
-32;3;;
-32;4;;
-32;5;;
-33;1;;
-33;2;;
-33;3;;
-33;4;;
-33;5;;
-34;1;;
-34;2;;
-34;3;;
-34;4;;
-34;5;;
-35;1;;
-35;2;;
-35;3;;
-35;4;;
-35;5;;
-36;1;;
-36;2;;
-36;3;;
-36;4;;
-36;5;;
-37;1;;
-37;2;;
-37;3;;
-37;4;;
-37;5;;
-38;1;;
-38;2;;
-38;3;;
-38;4;;
-38;5;;
-39;1;;
-39;2;;
-39;3;;
-39;4;;
-39;5;;
-40;1;;
-40;2;;
-40;3;;
-40;4;;
-40;5;;
-41;1;;
-41;2;;
-41;3;;
-41;4;Any fool can write code that a computer can understand. Good programmers write code that humans can understand.;Martin Fowler
-41;5;One of my most productive days was throwing away 1000 lines of code.;Ken Thompson
-42;1;I don't care if it works on your machine! We are not shipping your machine!;Vidiu Platon
-42;2;Real programmers don't comment their code. If it was hard to write, it should be hard to understand.;
-42;3;Don't comment bad code - rewrite it.;Brian Kernighan
-42;4;First, solve the problem. Then write the code.;John Johnson
-42;5;A good programmer is someone who always looks both ways before crossing a one-way street.;Doug Linder
-43;1;Testing can only prove the presence of bugs, not their absence.;Edsger W. Dijkstra
-43;2;C programmers never die. They are just cast into void.;Alan Perlis
-43;3;9 women cannot make a baby in one month.;Fred Brooks
-43;4;Walking on water and developing software from a specification are easy if both are frozen.;Edward V. Berard
-43;5;Any Scrum without working product at the end of a sprint is a failed Scrum.;Jeff Sutherland
-44;1;Any program is only as good as it is useful.;Linus Torvalds
-44;2;The function of good software is to make the complex appear to be simple.;Grady Booch
-44;3;The best way to get a project done faster is to start sooner.;Jim Highsmith
-44;4;The biggest issue on software teams is making sure everyone understands what everyone else is doing.;Martin Fowler
-44;5;Adding manpower to a late software project makes it later.;Fred Brook
-45;1;It’s really complex to make something simple.;Jack Dorsey
-45;2;Optimism is an occupational hazard of programming. Feedback is the treatment.;Kent Beck
-45;3;I have not failed. I’ve just found 10,000 ways that won’t work.;Thomas Edison
-45;4;It’s better to wait for a productive programmer to become available than it is to wait for the first available programmer to become productive.;Steve McConnell
-45;5;Code as if the next guy to maintain your code is a homicidal maniac who knows where you live.;Kathy Sierra
-46;1;Almost everything we know about good software architecture has to do with making software easy to change.;Mary Poppendieck
-46;2;The trouble with programmers is that you can never tell what a programmer is doing until it's too late.;Seymour Cray
-46;3;The Boy Scout Rule: Leave code cleaner than it was before you.;Robert Martin
-46;4;Don’t even start considering solutions until you understand the problem.;Oz Nova
-46;5;If you hold a Unix shell up to your ear, you can hear the C.;
-47;1;The first rule of functions - they should be small. The second rule of functions - they should be smaller than that!;Robert Martin
-47;2;Measuring programming progress by lines of code is like measuring aircraft building progress by weight.;Bill Gates
-47;3;;
-47;4;The Broken Windows Theory: If you see a mess in code(broken windows) - you think it's ok and you produce even more mess.;Robert Martin
-47;5;;
-48;1;;
-48;2;;
-48;3;;
-48;4;;
-48;5;;
-49;1;;
-49;2;;
-49;3;;
-49;4;;
-49;5;;
-50;1;;
-50;2;;
-50;3;;
-50;4;;
-50;5;;
-51;1;;
-51;2;;
-51;3;;
-51;4;;
-51;5;;
-52;1;;
-52;2;;
-52;3;;
-52;4;;
-52;5;;
-53;1;;
-53;2;;
-53;3;;
-53;4;;
-53;5;;
+Any fool can write code that a computer can understand. Good programmers write code that humans can understand.;Martin Fowler
+One of my most productive days was throwing away 1000 lines of code.;Ken Thompson
+I don't care if it works on your machine! We are not shipping your machine!;Vidiu Platon
+Real programmers don't comment their code. If it was hard to write, it should be hard to understand.;
+Don't comment bad code - rewrite it.;Brian Kernighan
+First, solve the problem. Then write the code.;John Johnson
+A good programmer is someone who always looks both ways before crossing a one-way street.;Doug Linder
+Testing can only prove the presence of bugs, not their absence.;Edsger W. Dijkstra
+C programmers never die. They are just cast into void.;Alan Perlis
+9 women cannot make a baby in one month.;Fred Brooks
+Walking on water and developing software from a specification are easy if both are frozen.;Edward V. Berard
+Any Scrum without working product at the end of a sprint is a failed Scrum.;Jeff Sutherland
+Any program is only as good as it is useful.;Linus Torvalds
+The function of good software is to make the complex appear to be simple.;Grady Booch
+The best way to get a project done faster is to start sooner.;Jim Highsmith
+The biggest issue on software teams is making sure everyone understands what everyone else is doing.;Martin Fowler
+Adding manpower to a late software project makes it later.;Fred Brook
+It’s really complex to make something simple.;Jack Dorsey
+Optimism is an occupational hazard of programming. Feedback is the treatment.;Kent Beck
+I have not failed. I’ve just found 10,000 ways that won’t work.;Thomas Edison
+It’s better to wait for a productive programmer to become available than it is to wait for the first available programmer to become productive.;Steve McConnell
+Code as if the next guy to maintain your code is a homicidal maniac who knows where you live.;Kathy Sierra
+Almost everything we know about good software architecture has to do with making software easy to change.;Mary Poppendieck
+The trouble with programmers is that you can never tell what a programmer is doing until it's too late.;Seymour Cray
+The Boy Scout Rule: Leave code cleaner than it was before you.;Robert Martin
+Don’t even start considering solutions until you understand the problem.;Oz Nova
+If you hold a Unix shell up to your ear, you can hear the C.;
+The first rule of functions - they should be small. The second rule of functions - they should be smaller than that!;Robert Martin
+Measuring programming progress by lines of code is like measuring aircraft building progress by weight.;Bill Gates
+The Broken Windows Theory: If you see a mess in code(broken windows) - you think it's ok and you produce even more mess.;Robert Martin
