@@ -26,6 +26,8 @@ dependencies:
     path: packages/repository
   entity:
     path: packages/entity
+  data_source:
+    path: packages/data_source
 
 dev_dependencies:
   flutter_test:

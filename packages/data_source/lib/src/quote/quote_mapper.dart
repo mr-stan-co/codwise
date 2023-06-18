@@ -1,5 +1,5 @@
+import 'package:data_source/src/quote/quote_fields.dart';
 import 'package:entity/entity.dart';
-import 'package:repository/src/quote/quote_fields.dart';
 
 class QuoteMapper {
   const QuoteMapper();

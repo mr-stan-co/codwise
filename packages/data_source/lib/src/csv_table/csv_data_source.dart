@@ -1,7 +1,7 @@
 import 'package:csv/csv.dart';
+import 'package:data_source/src/quote/quote_mapper.dart';
 import 'package:entity/entity.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:repository/repository.dart';
 import 'package:repository/src/quote/quote_data_source.dart';
 
 class CsvDataSource extends QuoteDataSource {
