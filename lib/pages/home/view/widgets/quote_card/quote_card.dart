@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:codwise/constants.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/card_constants.dart';
@@ -142,25 +144,27 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _quoteAuthor(String authorName) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        CardConstants.cardPadding,
-        24,
-        CardConstants.cardPadding,
-        0,
-      ),
-      child: Tooltip(
-        message: 'Tap to google',
-        child: InkWell(
-          onTap: () => onAuthorNameClicked(authorName),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              authorName,
-              style: const TextStyle(
-                fontSize: 22,
-                fontFamily: AppFonts.poppins,
-                decoration: TextDecoration.underline,
+    const sidePadding =  CardConstants.cardPadding;
+    return Visibility(
+      visible: authorName.isNotEmpty,
+      maintainSize: true,
+      maintainAnimation: true,
+      maintainState: true,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(sidePadding, 24, sidePadding, 0),
+        child: Tooltip(
+          message: 'Tap to google',
+          child: InkWell(
+            onTap: () => onAuthorNameClicked(authorName),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                authorName,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontFamily: AppFonts.poppins,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
           ),

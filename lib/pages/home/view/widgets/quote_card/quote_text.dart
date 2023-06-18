@@ -16,17 +16,21 @@ class QuoteText extends StatelessWidget {
         ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
     final double quoteTextSize = isSmallScreen ? 24 : 48;
     return AnimatedSize(
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 100),
       child: Padding(
         padding: const EdgeInsets.all(48.0),
-        child: Text(
-          quoteText,
-          style: TextStyle(
-            fontSize: quoteTextSize,
-            fontFamily: AppFonts.playfairDisplay,
-            fontWeight: FontWeight.w600,
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 50),
+          child: Text(
+            key: ValueKey(quoteText),
+            quoteText,
+            style: TextStyle(
+              fontSize: quoteTextSize,
+              fontFamily: AppFonts.playfairDisplay,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ),
     );
