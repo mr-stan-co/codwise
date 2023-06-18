@@ -128,7 +128,6 @@ class AboutPageView extends StatelessWidget {
               state.quoteAuthor,
               style: TextStyle(
                 fontSize: authorFontSize,
-                fontFamily: AppFonts.poppins,
                 fontStyle: FontStyle.italic,
               ),
             ),

@@ -59,7 +59,6 @@ class AboutSteps extends StatelessWidget {
           text: "Start using ",
           style: TextStyle(
             fontSize: titleFontSize,
-            fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w600,
             color: AppColors.black,
           ),

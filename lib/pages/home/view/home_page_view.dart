@@ -46,8 +46,8 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _quoteView(BuildContext context, QuoteEntity quote) {
-    final isSmallScreen =
-        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    final isBigScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.big;
     return Container(
       alignment: Alignment.center,
       decoration: const BoxDecoration(
@@ -60,7 +60,7 @@ class HomePageView extends StatelessWidget {
           ],
         ),
       ),
-      child: isSmallScreen ? _smallScreenUi(context, quote) : _bigScreenUi(context, quote),
+      child: isBigScreen ? _bigScreenUi(context, quote) : _smallScreenUi(context, quote),
     );
   }
 

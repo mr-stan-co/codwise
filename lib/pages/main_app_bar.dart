@@ -78,7 +78,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           style: TextStyle(
             color: AppColors.textGray,
             fontSize: 16,
-            fontFamily: AppFonts.poppins,
           ),
         ),
       ),
@@ -95,7 +94,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           style: TextStyle(
             color: AppColors.accentColor,
             fontSize: 18,
-            fontFamily: AppFonts.poppins,
           ),
         ),
       ),

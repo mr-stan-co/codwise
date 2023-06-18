@@ -34,7 +34,6 @@ class AboutStepView extends StatelessWidget {
                 style: TextStyle(
                   color: step.titleTextColor,
                   fontSize: stepTitleSize,
-                  fontFamily: AppFonts.poppins,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -44,7 +43,6 @@ class AboutStepView extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: stepDescriptionSize,
-                fontFamily: AppFonts.poppins,
               ),
             ),
           ],
@@ -70,7 +68,6 @@ class AboutStepView extends StatelessWidget {
           style: TextStyle(
             color: step.titleTextColor,
             fontSize: fontSize,
-            fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w600,
           ),
         ),

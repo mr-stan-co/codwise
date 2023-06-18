@@ -21,7 +21,6 @@ class AboutMainDescription extends StatelessWidget {
         aboutDescription,
         style: TextStyle(
           fontSize: aboutTextSize,
-          fontFamily: AppFonts.poppins,
         ),
       ),
     );

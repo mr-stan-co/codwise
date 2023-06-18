@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:codwise/constants.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/background_card_attr.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/card_constants.dart';
@@ -71,7 +69,7 @@ class QuoteCard extends StatelessWidget {
           CardConstants.cardPadding * 2,
         ),
         child: Container(
-          width: CardConstants.cardWithMain,
+          width: CardConstants.mainCardWith,
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: const BorderRadius.all(Radius.circular(CardConstants.cardBorderRadius)),
@@ -162,7 +160,6 @@ class QuoteCard extends StatelessWidget {
                 authorName,
                 style: const TextStyle(
                   fontSize: 22,
-                  fontFamily: AppFonts.poppins,
                   decoration: TextDecoration.underline,
                 ),
               ),
