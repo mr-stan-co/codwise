@@ -4,6 +4,7 @@ import 'package:codwise/pages/home/view/widgets/quote_card/card_constants.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/copy_quote.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/dashed_separator.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/quote_text.dart';
+import 'package:codwise/pages/view_utils/screen_size_util.dart';
 import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,36 +22,41 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        _backgroundCard(BackgroundCardAttr.second),
-        _backgroundCard(BackgroundCardAttr.first),
+        _backgroundCard(context, BackgroundCardAttr.second),
+        _backgroundCard(context, BackgroundCardAttr.first),
         _mainCard(),
       ],
     );
   }
 
-  Widget _backgroundCard(BackgroundCardAttr attr) {
-    return Positioned.fill(
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Opacity(
-          opacity: attr.opacity,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(
-              attr.sidePadding,
-              CardConstants.cardPadding,
-              attr.sidePadding,
-              attr.bottomPadding,
-            ),
-            child: Container(
-              width: attr.width,
-              height: CardConstants.cardPadding,
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(CardConstants.cardBorderRadius),
-                  bottomRight: Radius.circular(CardConstants.cardBorderRadius),
+  Widget _backgroundCard(BuildContext context, BackgroundCardAttr attr) {
+    final isSmallScreen =
+        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.small;
+    return Visibility(
+      visible: !isSmallScreen,
+      child: Positioned.fill(
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Opacity(
+            opacity: attr.opacity,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                attr.sidePadding,
+                CardConstants.cardPadding,
+                attr.sidePadding,
+                attr.bottomPadding,
+              ),
+              child: Container(
+                width: attr.width,
+                height: CardConstants.cardPadding,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(CardConstants.cardBorderRadius),
+                    bottomRight: Radius.circular(CardConstants.cardBorderRadius),
+                  ),
+                  boxShadow: _cardShadow(),
                 ),
-                boxShadow: _cardShadow(),
               ),
             ),
           ),

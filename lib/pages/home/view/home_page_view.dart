@@ -49,7 +49,6 @@ class HomePageView extends StatelessWidget {
     final isBigScreen =
         ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.big;
     return Container(
-      alignment: Alignment.center,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -82,18 +81,17 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _smallScreenUi(BuildContext context, QuoteEntity quote) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
       children: [
         const TodayDate(),
-        QuoteCard(quoteEntity: quote),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _quoteNavigateButton(context, false),
             _quoteNavigateButton(context, true),
           ],
-        )
+        ),
+        QuoteCard(quoteEntity: quote),
       ],
     );
   }
