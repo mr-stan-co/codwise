@@ -1,7 +1,7 @@
+import 'package:codwise/pages/about/about_page.dart';
+import 'package:codwise/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:codwise/pages/about/view/about_page.dart';
-import 'package:codwise/pages/home/view/home_page.dart';
 
 class AppRoute {
   const AppRoute({

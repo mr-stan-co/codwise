@@ -148,7 +148,7 @@ class QuoteCard extends StatelessWidget {
   }
 
   Widget _quoteAuthor(String authorName) {
-    const sidePadding =  CardConstants.cardPadding;
+    const sidePadding = CardConstants.cardPadding;
     return Visibility(
       visible: authorName.isNotEmpty,
       maintainSize: true,

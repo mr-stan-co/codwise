@@ -46,8 +46,7 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _quoteView(BuildContext context, QuoteEntity quote) {
-    final isBigScreen =
-        ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.big;
+    final isBigScreen = ScreenSizeUtil.getFromSize(MediaQuery.of(context).size) == ScreenSize.big;
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(

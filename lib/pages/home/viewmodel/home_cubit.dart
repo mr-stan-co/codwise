@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
         super(HomeState.loading()) {
     _loadQuotes();
   }
+
   final QuoteRepository _quoteRepository;
 
   Future<void> _loadQuotes() async {

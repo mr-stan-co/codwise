@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:codwise/app/router.dart';
 import 'package:codwise/constants.dart';
 import 'package:codwise/pages/view_utils/screen_size_util.dart';
+import 'package:flutter/material.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({Key? key}) : super(key: key);

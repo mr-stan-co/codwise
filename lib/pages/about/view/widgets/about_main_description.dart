@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:codwise/constants.dart';
 import 'package:codwise/pages/view_utils/screen_size_util.dart';
+import 'package:flutter/material.dart';
 
 class AboutMainDescription extends StatelessWidget {
   const AboutMainDescription({

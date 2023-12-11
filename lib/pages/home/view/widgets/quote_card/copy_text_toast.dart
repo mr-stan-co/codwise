@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:codwise/constants.dart';
+import 'package:flutter/material.dart';
 
 class CopyTextToast extends StatelessWidget {
   const CopyTextToast({Key? key}) : super(key: key);

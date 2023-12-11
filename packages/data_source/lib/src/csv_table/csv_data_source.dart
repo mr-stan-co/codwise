@@ -10,7 +10,7 @@ class CsvDataSource extends QuoteDataSource {
   }) : _quoteMapper = quoteMapper;
 
   final QuoteMapper _quoteMapper;
-  final String _quotesCsvFilePath = "assets/quotes/quotes_data_base.txt";
+  static const String _quotesCsvFilePath = "assets/quotes/quotes_data_base.txt";
   final CsvToListConverter _quotesConverter = const CsvToListConverter(fieldDelimiter: ";");
   Iterable<QuoteEntity>? quoteEntities;
 

@@ -2,6 +2,7 @@ import 'package:codwise/constants.dart';
 
 class AboutState {
   const AboutState();
+
   final String quoteText1 = "The great thing about inspiring quotes is that ";
   final String quoteText2 = "they pack so much wisdom in so few words.";
   final String quoteAuthor = "Chris Hughes";

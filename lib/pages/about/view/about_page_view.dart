@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:codwise/constants.dart';
 import 'package:codwise/pages/about/view/widgets/about_main_description.dart';
 import 'package:codwise/pages/about/view/widgets/about_main_title.dart';
@@ -10,6 +7,9 @@ import 'package:codwise/pages/about/viewmodel/about_state.dart';
 import 'package:codwise/pages/home/view/widgets/quote_card/dashed_separator.dart';
 import 'package:codwise/pages/main_app_bar.dart';
 import 'package:codwise/pages/view_utils/screen_size_util.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class AboutPageView extends StatelessWidget {
   const AboutPageView({Key? key}) : super(key: key);

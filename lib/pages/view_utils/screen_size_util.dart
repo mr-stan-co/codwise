@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 enum ScreenSize {
-  small, medium, big;
+  small,
+  medium,
+  big;
 }
 
 class ScreenSizeUtil {
