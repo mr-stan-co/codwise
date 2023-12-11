@@ -1,5 +1,5 @@
-name: data_source
-description: App package to provide data
+name: csv_data_source
+description: App package to provide data from csv table
 publish_to: none
 
 environment:
@@ -8,7 +8,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.18.1
   csv: ^5.0.1
   entity:
     path: ../entity

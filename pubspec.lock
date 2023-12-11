@@ -177,6 +177,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.2"
+  csv_data_source:
+    dependency: "direct main"
+    description:
+      path: "packages/csv_data_source"
+      relative: true
+    source: path
+    version: "0.0.0"
   dart_style:
     dependency: transitive
     description:
@@ -185,13 +192,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
-  data_source:
-    dependency: "direct main"
-    description:
-      path: "packages/data_source"
-      relative: true
-    source: path
-    version: "0.0.0"
   entity:
     dependency: "direct main"
     description:

@@ -1,4 +1,4 @@
-import 'package:data_source/src/quote/quote_fields.dart';
+import 'package:csv_data_source/src/quote/quote_fields.dart';
 import 'package:entity/entity.dart';
 
 class QuoteMapper {
