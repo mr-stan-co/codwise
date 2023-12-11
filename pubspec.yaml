@@ -17,7 +17,6 @@ dependencies:
   go_router: ^8.0.5
   flutter_bloc: ^8.0.0
   freezed_annotation: ^2.0.3
-  firebase_core: ^2.14.0
   intl: ^0.18.1
   flutter_svg: ^2.0.7
   url_launcher: ^6.1.5
